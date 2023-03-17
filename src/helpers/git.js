@@ -37,7 +37,8 @@ module.exports = new (class Git {
 
     // Update the origin
     if (githubToken) {
-      this.updateOrigin(`https://x-access-token:${githubToken}@${gitUrl}/${GITHUB_REPOSITORY}.git`)
+      core.info(`Using "${gitUrl}/${GITHUB_REPOSITORY}" url with custom token`)
+      this.updateOrigin(`https://${githubToken}@${gitUrl}/${GITHUB_REPOSITORY}.git`)
     }
   }
 
